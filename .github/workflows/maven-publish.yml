@@ -13,12 +13,17 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
-    name: Hello docker
+    steps:
+      - uses: actions/checkout@v3
+      - name: hello docker
+    
 
   job2:
     runs-on: ubuntu-latest
-    name: Hello devops
     if: github.ref=='refs/heads/release2'
+    steps:
+      - uses: actions/checkout@v3
+      - name: Hello devops
    
     
   build:
