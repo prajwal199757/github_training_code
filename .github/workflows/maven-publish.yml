@@ -5,8 +5,10 @@ name: Maven Package
 
 on: 
   push:
-    branches:
-      - master
+    branches-ignore:
+      - release1
+      - release2
+      - release3
 
 jobs:
   build:
