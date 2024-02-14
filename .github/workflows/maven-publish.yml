@@ -3,9 +3,24 @@
 
 name: Maven Package
 
-on: push
+on: 
+  push:
+    branches-ignore:
+      - release1
+      - master
+      - release3
 
 jobs:
+  job1:
+    runs-on: ubuntu-latest
+    name: Hello docker
+
+  job2:
+    runs-on: ubuntu-latest
+    name: Hello devops
+    if: github.ref=='refs/heads/release2'
+   
+    
   build:
 
     runs-on: ubuntu-latest
